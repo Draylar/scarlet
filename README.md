@@ -26,15 +26,7 @@ Scarlet code goes in your `/run/scarlet/` directory with the .scarlet file exten
 Reload all Scarlet code by pressing the 'R' key.
 How about we print a simple greeting when a player joins the server?
 
-```scarlet
-on player join {
-    if new {
-        chat "Welcome " + player.entityName + " to the server!"
-    } else {
-        chat player.entityName + " has returned."
-    }
-}
-```
+![join_script_example.png](resources/join_script_example.png)
 
 *Oops! I made a mistake while typing this out and wrote "on join server" instead,* you say, wondering how Scarlet will handle it.
 Scarlet has a nice error logging system which will show you exactly where offending code lies:

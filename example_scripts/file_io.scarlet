@@ -1,0 +1,10 @@
+on command test_run {
+    let contents = read_file("input.txt")
+    let split = contents.split("\n")
+    let grouped = split.map {
+        return it as double
+    }
+
+    sort grouped
+    chat grouped
+}

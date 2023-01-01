@@ -1,0 +1,8 @@
+on use diamond {
+
+    // Player is an implicit value stored in this scope from the parent event.
+    // .pos resolves to ServerPlayerEntity#getPos(): Vec3d, and .x resolves to Vec3d#getX(): double
+    let x = player.pos.x
+
+    chat "The player's X coordinate is: " + x
+}

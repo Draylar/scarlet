@@ -1,0 +1,3 @@
+on death of creeper {
+    chat "A creeper " + " was destroyed by " + source.name
+}

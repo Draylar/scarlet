@@ -1,0 +1,13 @@
+on interact wolf {
+    chat "Queueing messages..."
+
+    // Iterate over [ 1, 2, 3, 4, 5 ]
+    for i in range(1, 6) {
+
+        // 1 second, 2 seconds, 3 seconds...
+        let delay = i * 20
+        after delay ticks {
+            chat "This is iteration " + i + ", which ran after " + i + " seconds!"
+        }
+    }
+}

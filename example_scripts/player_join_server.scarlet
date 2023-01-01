@@ -1,0 +1,7 @@
+on player join {
+    if new {
+        chat "Welcome " + player.entityName + " to the server!"
+    } else {
+        chat player.entityName + " has returned."
+    }
+}

@@ -50,7 +50,11 @@ public class PatternExpression extends Expression {
 
     @Override
     public Object evaluate(ScarletInterpreter interpreter) {
-        return event.apply(instance, interpreter, statement);
+        if(event.runOn(world)) {
+            return event.apply(instance, interpreter, statement);
+        }
+
+        return null;
     }
 
     public ScarletPatternExpression getEvent() {

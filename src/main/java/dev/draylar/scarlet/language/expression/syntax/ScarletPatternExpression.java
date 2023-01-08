@@ -26,6 +26,8 @@ package dev.draylar.scarlet.language.expression.syntax;
 import dev.draylar.scarlet.language.ScarletInterpreter;
 import dev.draylar.scarlet.language.statement.BlockStatement;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class ScarletPatternExpression {
 
@@ -35,5 +37,9 @@ public abstract class ScarletPatternExpression {
 
     public void reload(MinecraftServer server) {
 
+    }
+
+    public boolean runOn(@Nullable World world) {
+        return world == null || !world.isClient;
     }
 }

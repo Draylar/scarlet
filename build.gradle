@@ -4,7 +4,7 @@ plugins {
     id "com.github.hierynomus.license" version "0.16.1"
 }
 
-version = project.mod_version + "+" + project.minecraft_version
+version = project.mod_version + "+" + project.minecraft_version + "-alpha"
 group = project.maven_group
 
 repositories {
@@ -56,16 +56,24 @@ jar {
 }
 
 publishing {
+    repositories {
+        maven {
+            name = "draylarRepository"
+            url = "https://maven.draylar.dev/releases"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+
     publications {
         mavenJava(MavenPublication) {
             from components.java
         }
     }
-
-    repositories {
-
-    }
 }
+
 
 license {
     mapping {

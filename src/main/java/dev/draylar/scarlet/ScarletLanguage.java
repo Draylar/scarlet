@@ -24,6 +24,7 @@
 package dev.draylar.scarlet;
 
 import dev.draylar.scarlet.language.expression.minecraft.KillExpression;
+import dev.draylar.scarlet.language.expression.minecraft.SummonExpression;
 import dev.draylar.scarlet.language.expression.minecraft.event.ScarletLanguageDebugSyntaxExpression;
 import dev.draylar.scarlet.language.expression.minecraft.event.ScarletLanguageDebugTestEvent;
 import dev.draylar.scarlet.language.expression.minecraft.event.ScarletLanguageServerTickEvent;
@@ -44,7 +45,8 @@ public class ScarletLanguage {
     public static final List<ScarletPatternExpression> PATTERN_EXPRESSIONS = new ArrayList<>(Arrays.asList(
             new ScarletLanguageDebugSyntaxExpression(),
             new SizeSyntaxExpression(),
-            new KillExpression()
+            new KillExpression(),
+            new SummonExpression()
     ));
 
     public static void registerEvent(ScarletPatternExpression event) {

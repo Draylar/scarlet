@@ -1,0 +1,11 @@
+on use apple {
+    summon creeper at player
+}
+
+on use golden_apple {
+    summon zombie at player.pos
+}
+
+// on use enchanted_golden_apple {
+//     summon spider at 0 0 0
+// }

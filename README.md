@@ -2,6 +2,8 @@
 
 ---
 
+![](https://maven.draylar.dev/api/badge/latest/releases/dev/draylar/scarlet?color=40c14a&name=Scarlet%20Maven)
+
 <img src="resources/scarlet.png" alt="drawing" width="200"/>
 
 Scarlet is an interpreted programming language built for Minecraft on the Fabric Loader. 

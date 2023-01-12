@@ -45,13 +45,15 @@ public class ScarletLanguageJoinEvent extends ScarletPatternExpression {
 
     @Override
     public Object apply(ScarletSyntax.Instance syntax, ScarletInterpreter interpreter, BlockStatement block) {
+        ScarletInterpreter frozen = interpreter.freeze();
+
         ScarletPlayerEvents.JOIN_SERVER.registerReloadable((player, isNew) -> {
-            Environment environment = interpreter.pushEnvironment();
+            Environment environment = frozen.pushEnvironment();
             environment.bind(player);
             environment.define("new", isNew);
             block.setWorld(player.getWorld());
-            block.evaluate(interpreter);
-            interpreter.popEnvironment();
+            block.evaluate(frozen);
+            frozen.popEnvironment();
         });
 
         return true;

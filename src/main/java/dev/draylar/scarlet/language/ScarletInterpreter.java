@@ -125,4 +125,24 @@ public class ScarletInterpreter {
     public void popEnvironment() {
         setEnvironment(getEnvironment().getParent());
     }
+
+    /**
+     * Returns a new {@link ScarletInterpreter} with a frozen {@link Environment} copied from this interpreter.
+     *
+     * <p>
+     * This is useful for callbacks where the interpreter {@link Environment} has to be swapped to the local scope of the event callback
+     * before executing the block, because it allows you to do the swap operations without touching the original {@link ScarletInterpreter}
+     * running the entire script.
+     *
+     * <p>
+     * The returned {@link ScarletInterpreter} will not have its {@link Environment} mutated by any other source other than the caller.
+     *
+     * @return the newly frozen {@link ScarletInterpreter}
+     */
+    public ScarletInterpreter freeze() {
+        ScarletInterpreter interpreter = new ScarletInterpreter();
+        interpreter.setEnvironment(freezeEnvironment());
+        interpreter.world = world;
+        return interpreter;
+    }
 }
